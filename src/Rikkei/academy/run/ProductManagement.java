@@ -28,10 +28,11 @@ public class ProductManagement {
                     do {
                         System.out.println("Nhập số sản phẩm bạn muốn thêm: ");
                         size = sc.nextInt();
-                        if (size<0)
+                        if (size < 0)
                             System.out.println("Số lượng không phù hợp!");
                     } while (size < 0);
                     for (int i = 0; i < size; i++) {
+                        System.out.println("Nhập thông tin sản phẩm " + (i + 1));
                         arr.add(new Product());
                         arr.get(i).inputData();
                         arr.get(i).setInterest();
@@ -41,7 +42,7 @@ public class ProductManagement {
                     for (int i = 0; i < arr.size(); i++) {
                         arr.get(i).displayData();
                     }
-                    if (arr.size()==0)
+                    if (arr.size() == 0)
                         System.out.println("Danh sách trống.");
                     break;
                 case 3:
@@ -52,7 +53,7 @@ public class ProductManagement {
                     int deleteId = sc.nextInt();
                     boolean flag = false;
                     for (int i = 0; i < arr.size(); i++) {
-                        if (arr.get(i).getProductId() == deleteId){
+                        if (arr.get(i).getProductId() == deleteId) {
                             arr.remove(i);
                             System.out.println("Xóa thành công sản phẩm có mã --> " + deleteId);
                             flag = true;
@@ -67,7 +68,7 @@ public class ProductManagement {
                     String findName = sc.nextLine();
                     boolean flagName = false;
                     for (int i = 0; i < arr.size(); i++) {
-                        if (arr.get(i).getProductName().equalsIgnoreCase(findName)){
+                        if (arr.get(i).getProductName().equalsIgnoreCase(findName)) {
                             arr.get(i).displayData();
                             flagName = true;
                         }
@@ -80,7 +81,7 @@ public class ProductManagement {
                     int changeId = sc.nextInt();
                     boolean flagStatus = false;
                     for (int i = 0; i < arr.size(); i++) {
-                        if (arr.get(i).getProductId() == changeId){
+                        if (arr.get(i).getProductId() == changeId) {
                             arr.get(i).setProductStatus();
                             flagStatus = true;
                         }
